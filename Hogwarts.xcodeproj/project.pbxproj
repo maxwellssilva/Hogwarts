@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8247E7FF2D41329000B8E2AC /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8247E7FE2D41328700B8E2AC /* CardCell.swift */; };
 		82D473112B6945CE00FF1E4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D473102B6945CE00FF1E4B /* AppDelegate.swift */; };
 		82D473132B6945CE00FF1E4B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D473122B6945CE00FF1E4B /* SceneDelegate.swift */; };
 		82D473152B6945CE00FF1E4B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D473142B6945CE00FF1E4B /* ViewController.swift */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8247E7FE2D41328700B8E2AC /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
 		82D4730D2B6945CE00FF1E4B /* Hogwarts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hogwarts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82D473102B6945CE00FF1E4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		82D473122B6945CE00FF1E4B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -35,6 +37,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8247E7FB2D41287A00B8E2AC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				82D473142B6945CE00FF1E4B /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		82D473042B6945CE00FF1E4B = {
 			isa = PBXGroup;
 			children = (
@@ -54,9 +64,10 @@
 		82D4730F2B6945CE00FF1E4B /* Hogwarts */ = {
 			isa = PBXGroup;
 			children = (
+				8247E7FE2D41328700B8E2AC /* CardCell.swift */,
+				8247E7FB2D41287A00B8E2AC /* Controller */,
 				82D473102B6945CE00FF1E4B /* AppDelegate.swift */,
 				82D473122B6945CE00FF1E4B /* SceneDelegate.swift */,
-				82D473142B6945CE00FF1E4B /* ViewController.swift */,
 				82D473192B6945D000FF1E4B /* Assets.xcassets */,
 				82D4731B2B6945D000FF1E4B /* LaunchScreen.storyboard */,
 				82D4731E2B6945D000FF1E4B /* Info.plist */,
@@ -137,6 +148,7 @@
 				82D473152B6945CE00FF1E4B /* ViewController.swift in Sources */,
 				82D473112B6945CE00FF1E4B /* AppDelegate.swift in Sources */,
 				82D473132B6945CE00FF1E4B /* SceneDelegate.swift in Sources */,
+				8247E7FF2D41329000B8E2AC /* CardCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
