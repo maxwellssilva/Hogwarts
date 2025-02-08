@@ -23,7 +23,7 @@ class CardCell: UITableViewCell {
     private lazy var nameLabel: UILabel = {
         let name = UILabel()
         name.font = UIFont(name: "HelveticaNeue-CondensedBlack", size: 25)
-        name.textColor = .black
+        name.textColor = .label
         name.numberOfLines = 0
         return name
     }()
@@ -31,7 +31,7 @@ class CardCell: UITableViewCell {
     private lazy var houseLabel: UILabel = {
         let house = UILabel()
         house.font = UIFont(name: "HelveticaNeue", size: 15)
-        house.textColor = .darkGray
+        house.textColor = .secondaryLabel
         return house
     }()
     
