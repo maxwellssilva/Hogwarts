@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		825CBCE02D56E6BF008BFD7A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825CBCDF2D56E6B4008BFD7A /* Extensions.swift */; };
 		829CAE682D56A65B00499F57 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829CAE672D56A64C00499F57 /* CardCell.swift */; };
 		829CAE6F2D56AC4F00499F57 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829CAE6E2D56AC4900499F57 /* NetworkManager.swift */; };
 		829CAE722D56ACB500499F57 /* Characters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829CAE712D56ACA600499F57 /* Characters.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		825CBCDF2D56E6B4008BFD7A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		829CAE672D56A64C00499F57 /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
 		829CAE6E2D56AC4900499F57 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		829CAE712D56ACA600499F57 /* Characters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Characters.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 		829CAE6D2D56AC3F00499F57 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				825CBCDF2D56E6B4008BFD7A /* Extensions.swift */,
 				829CAE6E2D56AC4900499F57 /* NetworkManager.swift */,
 			);
 			path = Service;
@@ -189,6 +192,7 @@
 				829CAE6F2D56AC4F00499F57 /* NetworkManager.swift in Sources */,
 				82D473132B6945CE00FF1E4B /* SceneDelegate.swift in Sources */,
 				829CAE682D56A65B00499F57 /* CardCell.swift in Sources */,
+				825CBCE02D56E6BF008BFD7A /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
