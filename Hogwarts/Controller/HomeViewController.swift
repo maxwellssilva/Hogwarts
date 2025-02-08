@@ -24,10 +24,10 @@ class HomeViewController: UIViewController {
     
     private lazy var list: UITableView = {
         let list = UITableView()
-        list.backgroundColor = .blue
+        list.backgroundColor = .white
         list.dataSource = self
         list.delegate = self
-        list.rowHeight = 90
+        list.rowHeight = 130
         list.register(CardCell.self, forCellReuseIdentifier: "CardCell")
         list.translatesAutoresizingMaskIntoConstraints = false
         return list
@@ -36,8 +36,8 @@ class HomeViewController: UIViewController {
     //MARK: Ciclo de vida
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
-        setupLayout()
+        view.backgroundColor = .systemBackground
+        setupLayoutHome()
         fetchCharacters()
     }
     
@@ -61,7 +61,7 @@ class HomeViewController: UIViewController {
         }
     }
     
-    func setupLayout() {
+    func setupLayoutHome() {
         view.addSubview(searchBar)
         view.addSubview(list)
         NSLayoutConstraint.activate([
@@ -91,6 +91,14 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         cell.configure(with: character)
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedCharacter = characters[indexPath.row]
+        let detailViewController = DetailViewController()
+        detailViewController.configure(with: selectedCharacter)
+        navigationController?.pushViewController(detailViewController, animated: true)
+    }
+
 }
 
 extension HomeViewController: UISearchBarDelegate {
