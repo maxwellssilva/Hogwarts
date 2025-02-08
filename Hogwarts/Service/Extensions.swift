@@ -42,4 +42,3 @@ extension UIImageView {
         download(from: url, placeholder: placeholder, contentMode: mode)
     }
 }
-

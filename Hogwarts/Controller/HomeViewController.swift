@@ -18,13 +18,14 @@ class HomeViewController: UIViewController {
         let searchBar = UISearchBar()
         searchBar.placeholder = "Procure por um personagem"
         searchBar.searchBarStyle = .minimal
+        searchBar.barTintColor = .systemBackground
         searchBar.translatesAutoresizingMaskIntoConstraints = false
         return searchBar
     }()
     
     private lazy var list: UITableView = {
         let list = UITableView()
-        list.backgroundColor = .white
+        list.backgroundColor = .systemBackground
         list.dataSource = self
         list.delegate = self
         list.rowHeight = 130
