@@ -36,7 +36,7 @@ class HomeViewController: UIViewController {
     //MARK: Ciclo de vida
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
         setupLayoutHome()
         fetchCharacters()
     }

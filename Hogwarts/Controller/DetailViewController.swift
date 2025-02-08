@@ -35,49 +35,49 @@ class DetailViewController: UIViewController {
     private lazy var nameLabel: UILabel = {
         let name = UILabel()
         name.font = UIFont(name: "HelveticaNeue-CondensedBlack", size: 20)
-        name.textColor = .black
+        name.textColor = .label
         return name
     }()
     
     private lazy var houseLabel: UILabel = {
         let house = UILabel()
         house.font = UIFont(name: "HelveticaNeue-CondensedBlack", size: 20)
-        house.textColor = .black
+        house.textColor = .label
         return house
     }()
     
     private lazy var specieLabel: UILabel = {
         let specie = UILabel()
         specie.font = UIFont(name: "HelveticaNeue-CondensedBlack", size: 20)
-        specie.textColor = .black
+        specie.textColor = .label
         return specie
     }()
     
     private lazy var dateOfBirthLabel: UILabel = {
         let date = UILabel()
         date.font = UIFont(name: "HelveticaNeue-CondensedBlack", size: 20)
-        date.textColor = .black
+        date.textColor = .label
         return date
     }()
     
     private lazy var patronusLabel: UILabel = {
         let patronus = UILabel()
         patronus.font = UIFont(name: "HelveticaNeue-CondensedBlack", size: 20)
-        patronus.textColor = .black
+        patronus.textColor = .label
         return patronus
     }()
     
     private lazy var actorLabel: UILabel = {
         let actor = UILabel()
         actor.font = UIFont(name: "HelveticaNeue-CondensedBlack", size: 20)
-        actor.textColor = .black
+        actor.textColor = .label
         actor.numberOfLines = 0
         return actor
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
         setupLayoutDetail()
 
     }
