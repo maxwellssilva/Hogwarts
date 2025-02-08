@@ -23,9 +23,10 @@ extension UIImageView {
             }
         }.resume()
     }
-        func download(from link: String, contentMode mode: ContentMode = .scaleAspectFit) {
-            guard let url = URL(string: link) else { return }
-            download(from: url, contentMode: mode)
-        }
+    
+    func download(from link: String, contentMode mode: ContentMode = .scaleAspectFit) {
+        guard let url = URL(string: link) else { return }
+        download(from: url, contentMode: mode)
+    }
 }
 
