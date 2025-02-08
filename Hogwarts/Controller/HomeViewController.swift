@@ -10,13 +10,14 @@ import UIKit
 class HomeViewController: UIViewController {
     
     private var characters: [ListCharacters] = []
+    private var filterCharacters: [ListCharacters] = []
+    private var isSearch = false
     
     //MARK: Componentes
     private lazy var searchBar: UISearchBar = {
         let searchBar = UISearchBar()
         searchBar.placeholder = "Procure por um personagem"
         searchBar.searchBarStyle = .minimal
-        searchBar.delegate = self
         searchBar.translatesAutoresizingMaskIntoConstraints = false
         return searchBar
     }()
@@ -26,7 +27,7 @@ class HomeViewController: UIViewController {
         list.backgroundColor = .blue
         list.dataSource = self
         list.delegate = self
-        list.rowHeight = 70
+        list.rowHeight = 90
         list.register(CardCell.self, forCellReuseIdentifier: "CardCell")
         list.translatesAutoresizingMaskIntoConstraints = false
         return list
@@ -37,6 +38,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         setupLayout()
+        fetchCharacters()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -45,7 +47,6 @@ class HomeViewController: UIViewController {
     }
     
     //MARK: Métodos
-    
     func fetchCharacters() {
         NetworkManager.shared.fetchData { [weak self] result in
             DispatchQueue.main.async {
@@ -73,25 +74,42 @@ class HomeViewController: UIViewController {
             list.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             list.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
+        searchBar.delegate = self
     }
 }
 
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return characters.count
+        return isSearch ? filterCharacters.count : characters.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = list.dequeueReusableCell(withIdentifier: "CardCell", for: indexPath) as? CardCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CardCell", for: indexPath) as? CardCell else {
             return UITableViewCell()
         }
-        let character = characters[indexPath.row]
-        //cell.configure(with: character)
+        let character = isSearch ? filterCharacters[indexPath.row] : characters[indexPath.row]
+        cell.configure(with: character)
         return cell
     }
 }
 
 extension HomeViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.isEmpty {
+            isSearch = false
+        } else {
+            isSearch = true
+            filterCharacters = characters.filter { character in
+                return character.name.lowercased().contains(searchText.lowercased())
+            }
+        }
+        list.reloadData()
+    }
+        
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.text = ""
+        isSearch = false
+        list.reloadData()
+        searchBar.resignFirstResponder()
     }
 }

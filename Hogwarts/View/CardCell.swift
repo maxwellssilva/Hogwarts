@@ -14,8 +14,8 @@ class CardCell: UITableViewCell {
         image.layer.cornerRadius = 8
         image.contentMode = .scaleAspectFill
         image.clipsToBounds = true
-        image.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        image.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        image.heightAnchor.constraint(equalToConstant: 80).isActive = true
+        image.widthAnchor.constraint(equalToConstant: 80).isActive = true
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
@@ -40,6 +40,7 @@ class CardCell: UITableViewCell {
     //MARK: Inicializador
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setupCardCell()
     }
     
     required init?(coder: NSCoder) {
@@ -68,5 +69,14 @@ class CardCell: UITableViewCell {
     func configure(with character: ListCharacters) {
         nameLabel.text = character.name
         houseLabel.text = character.house
+        
+        let placeholderImage = UIImage(named: "placeholder")
+        
+        imageCharacter.image = placeholderImage
+        
+        if let imageUrl = character.image {
+            //print("Carregando imagem: \(imageUrl)")
+            imageCharacter.download(from: imageUrl, placeholder: placeholderImage)
+        }
     }
 }

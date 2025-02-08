@@ -9,6 +9,6 @@ import UIKit
 
 struct ListCharacters: Codable {
     let name: String
-    let image: String
-    let house: String
+    let image: String?
+    let house: String?
 }
