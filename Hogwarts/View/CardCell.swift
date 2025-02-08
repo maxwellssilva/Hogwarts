@@ -14,7 +14,7 @@ class CardCell: UITableViewCell {
         image.layer.cornerRadius = 8
         image.contentMode = .scaleAspectFill
         image.clipsToBounds = true
-        image.heightAnchor.constraint(equalToConstant: 80).isActive = true
+        image.heightAnchor.constraint(equalToConstant: 120).isActive = true
         image.widthAnchor.constraint(equalToConstant: 80).isActive = true
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
@@ -25,7 +25,6 @@ class CardCell: UITableViewCell {
         name.font = UIFont(name: "HelveticaNeue-CondensedBlack", size: 25)
         name.textColor = .black
         name.numberOfLines = 0
-        name.translatesAutoresizingMaskIntoConstraints = false
         return name
     }()
     
@@ -33,8 +32,16 @@ class CardCell: UITableViewCell {
         let house = UILabel()
         house.font = UIFont(name: "HelveticaNeue", size: 15)
         house.textColor = .darkGray
-        house.translatesAutoresizingMaskIntoConstraints = false
         return house
+    }()
+    
+    private lazy var stackView: UIStackView = {
+        let stack = UIStackView(arrangedSubviews: [nameLabel, houseLabel])
+        stack.axis = .vertical
+        stack.alignment = .leading
+        stack.spacing = 5
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        return stack
     }()
     
     //MARK: Inicializador
@@ -49,20 +56,14 @@ class CardCell: UITableViewCell {
     
     func setupCardCell() {
         addSubview(imageCharacter)
-        addSubview(nameLabel)
-        addSubview(houseLabel)
+        addSubview(stackView)
         NSLayoutConstraint.activate([
             imageCharacter.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
             imageCharacter.centerYAnchor.constraint(equalTo: centerYAnchor),
             
-            nameLabel.leadingAnchor.constraint(equalTo: imageCharacter.trailingAnchor, constant: 30),
-            nameLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
-            nameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 15),
-            
-            houseLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 10),
-            houseLabel.leadingAnchor.constraint(equalTo: imageCharacter.trailingAnchor, constant: 30),
-            houseLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
-            houseLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10)
+            stackView.leadingAnchor.constraint(equalTo: imageCharacter.trailingAnchor, constant: 30),
+            stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
+            stackView.centerYAnchor.constraint(equalTo: centerYAnchor),
         ])
     }
     
