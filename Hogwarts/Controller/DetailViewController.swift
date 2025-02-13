@@ -67,8 +67,8 @@ class DetailViewController: UIViewController {
     
     func configure(with character: ListCharacters) {
         nameLabel.text = "Nome: \(character.name)"
-        houseLabel.text = "Casa: \(character.house ?? "Desconhecida")"
-        specieLabel.text = "Espécie: \(character.species ?? "Desconhecida")"
+        houseLabel.text = "Casa: \(character.house ?? "Não sabo")"
+        specieLabel.text = "Espécie: \(character.species ?? "Não sabo")"
         dateOfBirthLabel.text = "Nascimento: \(character.dateOfBirth ?? "Não informado")"
         patronusLabel.text = "Patrono: \(character.patronus ?? "Não sabo")"
         actorLabel.text = "Ator: \(character.actor ?? "Desconhecido")"
