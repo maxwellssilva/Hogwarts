@@ -15,10 +15,10 @@ O objetivo é aplicar os conhecimentos sobre criação de layout programaticamen
 
 ## Hogwarts
 <p align="left">
-  <img width="397" src="https://github.com/user-attachments/assets/58d61ef5-fe5b-4412-a8d8-6ca43c8bef8a" />
-  <img width="397" src="https://github.com/user-attachments/assets/ef77419f-f947-4f07-a47c-f366fb8ecdf7" />
-  <img width="402" src="https://github.com/user-attachments/assets/411d98d1-2b7b-4a5e-8503-66f4ce187f5e" />
-  <img width="402" src="https://github.com/user-attachments/assets/184a8ee9-63b5-4db8-8ae7-c5ee365fdb27" />
+  <img width="350" src="https://github.com/user-attachments/assets/ddcd9b15-e4fe-4220-9e1e-5bd3cc9bd161" />
+  <img width="350" src="https://github.com/user-attachments/assets/4e9cb173-ce21-4990-abda-2062c84e63f5" />
+  <img width="350" src="https://github.com/user-attachments/assets/8010af6e-2b0b-4f30-a7e1-bf1a7aa396ab" />
+  <img width="350" src="https://github.com/user-attachments/assets/a2fce421-f6dd-4b61-ab2b-a0367c928611" />
 </p>
 
 Inspiração: https://github.com/suyashvash/hogwarts-ios
