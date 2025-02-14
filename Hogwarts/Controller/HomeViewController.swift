@@ -94,7 +94,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedCharacter = characters[indexPath.row]
+        let selectedCharacter = isSearch ? filterCharacters[indexPath.row] : characters[indexPath.row]
         let detailViewController = DetailViewController()
         detailViewController.configure(with: selectedCharacter)
         navigationController?.pushViewController(detailViewController, animated: true)

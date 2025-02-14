@@ -44,7 +44,7 @@ class CardCell: UITableViewCell {
         return icon
     }()
     
-    private lazy var stackVertical: UIStackView = {
+    private lazy var stackVerticalText: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [nameLabel, houseLabel])
         stack.axis = .vertical
         stack.alignment = .leading
@@ -53,8 +53,8 @@ class CardCell: UITableViewCell {
         return stack
     }()
     
-    private lazy var stackHorizontal: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [iconImage, stackVertical])
+    private lazy var stackHorizontalElements: UIStackView = {
+        let stack = UIStackView(arrangedSubviews: [iconImage, stackVerticalText])
         stack.axis = .horizontal
         stack.alignment = .center
         stack.spacing = 10
@@ -74,14 +74,14 @@ class CardCell: UITableViewCell {
     
     func setupCardCell() {
         addSubview(imageCharacter)
-        addSubview(stackHorizontal)
+        addSubview(stackHorizontalElements)
         NSLayoutConstraint.activate([
             imageCharacter.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
             imageCharacter.centerYAnchor.constraint(equalTo: centerYAnchor),
             
-            stackHorizontal.leadingAnchor.constraint(equalTo: imageCharacter.trailingAnchor, constant: 20),
-            stackHorizontal.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
-            stackHorizontal.centerYAnchor.constraint(equalTo: centerYAnchor),
+            stackHorizontalElements.leadingAnchor.constraint(equalTo: imageCharacter.trailingAnchor, constant: 10),
+            stackHorizontalElements.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
+            stackHorizontalElements.centerYAnchor.constraint(equalTo: centerYAnchor),
         ])
     }
     

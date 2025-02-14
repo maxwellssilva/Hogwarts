@@ -68,7 +68,7 @@ class DetailViewController: UIViewController {
     func configure(with character: ListCharacters) {
         nameLabel.text = "Nome: \(character.name)"
         houseLabel.text = "Casa: \(character.house ?? "Não sabo")"
-        specieLabel.text = "Espécie: \(character.species ?? "Não sabo")"
+        specieLabel.text = "Espécie: \(character.species ?? "Desconhecida")"
         dateOfBirthLabel.text = "Nascimento: \(character.dateOfBirth ?? "Não informado")"
         patronusLabel.text = "Patrono: \(character.patronus ?? "Não sabo")"
         actorLabel.text = "Ator: \(character.actor ?? "Desconhecido")"
@@ -83,7 +83,7 @@ class DetailViewController: UIViewController {
         
         switch character.house {
             case "Gryffindor":
-                view.backgroundColor = .gryffindor
+                view.backgroundColor = UIColor(named: "GryffindorColor")
                 nameLabel.textColor = .white
                 houseLabel.textColor = .white
                 specieLabel.textColor = .white
@@ -91,7 +91,7 @@ class DetailViewController: UIViewController {
                 patronusLabel.textColor = .white
                 actorLabel.textColor = .white
             case "Slytherin":
-                view.backgroundColor = .slytherin
+                view.backgroundColor = UIColor(named: "SlytherinColor")
                 nameLabel.textColor = .white
                 houseLabel.textColor = .white
                 specieLabel.textColor = .white
@@ -99,7 +99,7 @@ class DetailViewController: UIViewController {
                 patronusLabel.textColor = .white
                 actorLabel.textColor = .white
             case "Ravenclaw":
-                view.backgroundColor = .ravenclaw
+                view.backgroundColor = UIColor(named: "RavenclawColor")
                 nameLabel.textColor = .white
                 houseLabel.textColor = .white
                 specieLabel.textColor = .white
@@ -107,7 +107,7 @@ class DetailViewController: UIViewController {
                 patronusLabel.textColor = .white
                 actorLabel.textColor = .white
             case "Hufflepuff":
-                view.backgroundColor = .hufflepuff
+                view.backgroundColor = UIColor(named: "HufflepuffColor")
                 nameLabel.textColor = .black
                 houseLabel.textColor = .black
                 specieLabel.textColor = .black
