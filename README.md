@@ -1,8 +1,8 @@
 # Hogwarts
 Um aplicativo de consulta aos personagens da Saga Harry Potter
 
-## Objetivo de estudo
-O objetivo é aplicar os conhecimentos sobre criação de layout programaticamente com UIKit, navegação entre telas e requisições de API utilizando URLSession.
+## Objetivo
+O objetivo é aplicar os conhecimentos sobre criação de UI via código com UIKit, navegação entre telas, implementação de Singleton e requisições com URLSession.
 
 ## Tecnologias utilizadas:
 - Swift
