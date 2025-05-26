@@ -31,15 +31,33 @@ class CardCell: UITableViewCell {
     private lazy var houseLabel: UILabel = {
         let house = UILabel()
         house.font = UIFont(name: "HelveticaNeue", size: 15)
-        house.textColor = .secondaryLabel
+        //house.textColor = .label
         return house
     }()
     
-    private lazy var stackView: UIStackView = {
+    private lazy var iconImage: UIImageView = {
+        let icon = UIImageView()
+        icon.contentMode = .scaleAspectFill
+        icon.clipsToBounds = true
+        icon.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        icon.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        return icon
+    }()
+    
+    private lazy var stackVerticalText: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [nameLabel, houseLabel])
         stack.axis = .vertical
         stack.alignment = .leading
         stack.spacing = 5
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        return stack
+    }()
+    
+    private lazy var stackHorizontalElements: UIStackView = {
+        let stack = UIStackView(arrangedSubviews: [iconImage, stackVerticalText])
+        stack.axis = .horizontal
+        stack.alignment = .center
+        stack.spacing = 10
         stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
     }()
@@ -56,14 +74,14 @@ class CardCell: UITableViewCell {
     
     func setupCardCell() {
         addSubview(imageCharacter)
-        addSubview(stackView)
+        addSubview(stackHorizontalElements)
         NSLayoutConstraint.activate([
             imageCharacter.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
             imageCharacter.centerYAnchor.constraint(equalTo: centerYAnchor),
             
-            stackView.leadingAnchor.constraint(equalTo: imageCharacter.trailingAnchor, constant: 30),
-            stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
-            stackView.centerYAnchor.constraint(equalTo: centerYAnchor),
+            stackHorizontalElements.leadingAnchor.constraint(equalTo: imageCharacter.trailingAnchor, constant: 10),
+            stackHorizontalElements.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
+            stackHorizontalElements.centerYAnchor.constraint(equalTo: centerYAnchor),
         ])
     }
     
@@ -78,6 +96,23 @@ class CardCell: UITableViewCell {
         if let imageUrl = character.image {
             //print("Carregando imagem: \(imageUrl)")
             imageCharacter.download(from: imageUrl, placeholder: placeholderImage)
+        }
+        
+        switch character.house {
+            case "Gryffindor":
+                houseLabel.textColor = UIColor(named: "GryffindorColor")
+                iconImage.image = UIImage(named: "gryffindor")
+            case "Slytherin":
+                houseLabel.textColor = UIColor(named: "SlytherinColor")
+                iconImage.image = UIImage(named: "slytherin")
+            case "Ravenclaw":
+                houseLabel.textColor = UIColor(named: "RavenclawColor")
+                iconImage.image = UIImage(named: "ravenclaw")
+            case "Hufflepuff":
+                houseLabel.textColor = UIColor(named: "HufflepuffColor")
+                iconImage.image = UIImage(named: "hufflepuff")
+            default:
+                backgroundColor = .systemBackground
         }
     }
 }

@@ -11,7 +11,7 @@
 		8274D0D32D57C61500E145FC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8274D0D22D57C61500E145FC /* DetailViewController.swift */; };
 		829CAE682D56A65B00499F57 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829CAE672D56A64C00499F57 /* CardCell.swift */; };
 		829CAE6F2D56AC4F00499F57 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829CAE6E2D56AC4900499F57 /* NetworkManager.swift */; };
-		829CAE722D56ACB500499F57 /* Characters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829CAE712D56ACA600499F57 /* Characters.swift */; };
+		829CAE722D56ACB500499F57 /* ListCharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829CAE712D56ACA600499F57 /* ListCharacters.swift */; };
 		82D473112B6945CE00FF1E4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D473102B6945CE00FF1E4B /* AppDelegate.swift */; };
 		82D473132B6945CE00FF1E4B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D473122B6945CE00FF1E4B /* SceneDelegate.swift */; };
 		82D473152B6945CE00FF1E4B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D473142B6945CE00FF1E4B /* HomeViewController.swift */; };
@@ -24,7 +24,7 @@
 		8274D0D22D57C61500E145FC /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		829CAE672D56A64C00499F57 /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
 		829CAE6E2D56AC4900499F57 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		829CAE712D56ACA600499F57 /* Characters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Characters.swift; sourceTree = "<group>"; };
+		829CAE712D56ACA600499F57 /* ListCharacters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCharacters.swift; sourceTree = "<group>"; };
 		82D4730D2B6945CE00FF1E4B /* Hogwarts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hogwarts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82D473102B6945CE00FF1E4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		82D473122B6945CE00FF1E4B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,7 +48,7 @@
 		829CAE692D56AC0200499F57 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				829CAE712D56ACA600499F57 /* Characters.swift */,
+				829CAE712D56ACA600499F57 /* ListCharacters.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -82,7 +82,6 @@
 		829CAE6D2D56AC3F00499F57 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				825CBCDF2D56E6B4008BFD7A /* Extensions.swift */,
 				829CAE6E2D56AC4900499F57 /* NetworkManager.swift */,
 			);
 			path = Service;
@@ -107,6 +106,7 @@
 		82D4730F2B6945CE00FF1E4B /* Hogwarts */ = {
 			isa = PBXGroup;
 			children = (
+				82F5880E2D5E6FD100040AC6 /* Utils */,
 				829CAE6D2D56AC3F00499F57 /* Service */,
 				829CAE6C2D56AC2100499F57 /* Resources */,
 				829CAE6B2D56AC1100499F57 /* Controller */,
@@ -117,6 +117,14 @@
 				82D4731E2B6945D000FF1E4B /* Info.plist */,
 			);
 			path = Hogwarts;
+			sourceTree = "<group>";
+		};
+		82F5880E2D5E6FD100040AC6 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				825CBCDF2D56E6B4008BFD7A /* Extensions.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,7 +198,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				82D473152B6945CE00FF1E4B /* HomeViewController.swift in Sources */,
-				829CAE722D56ACB500499F57 /* Characters.swift in Sources */,
+				829CAE722D56ACB500499F57 /* ListCharacters.swift in Sources */,
 				82D473112B6945CE00FF1E4B /* AppDelegate.swift in Sources */,
 				829CAE6F2D56AC4F00499F57 /* NetworkManager.swift in Sources */,
 				82D473132B6945CE00FF1E4B /* SceneDelegate.swift in Sources */,
