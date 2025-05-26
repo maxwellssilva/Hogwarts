@@ -18,14 +18,13 @@ class HomeViewController: UIViewController {
         let searchBar = UISearchBar()
         searchBar.placeholder = "Procure por um personagem"
         searchBar.searchBarStyle = .minimal
-        searchBar.barTintColor = .systemBackground
         searchBar.translatesAutoresizingMaskIntoConstraints = false
         return searchBar
     }()
     
     private lazy var list: UITableView = {
         let list = UITableView()
-        list.backgroundColor = .systemBackground
+        list.backgroundColor = .white
         list.dataSource = self
         list.delegate = self
         list.rowHeight = 130
@@ -94,7 +93,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedCharacter = isSearch ? filterCharacters[indexPath.row] : characters[indexPath.row]
+        let selectedCharacter = characters[indexPath.row]
         let detailViewController = DetailViewController()
         detailViewController.configure(with: selectedCharacter)
         navigationController?.pushViewController(detailViewController, animated: true)

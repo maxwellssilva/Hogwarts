@@ -32,25 +32,54 @@ class DetailViewController: UIViewController {
         return stack
     }()
     
-    private lazy var nameLabel = configLabel()
-    private lazy var houseLabel = configLabel()
-    private lazy var specieLabel = configLabel()
-    private lazy var dateOfBirthLabel = configLabel()
-    private lazy var patronusLabel = configLabel()
-    private lazy var actorLabel = configLabel()
+    private lazy var nameLabel: UILabel = {
+        let name = UILabel()
+        name.font = UIFont(name: "HelveticaNeue-CondensedBlack", size: 20)
+        name.textColor = .label
+        return name
+    }()
     
+    private lazy var houseLabel: UILabel = {
+        let house = UILabel()
+        house.font = UIFont(name: "HelveticaNeue-CondensedBlack", size: 20)
+        house.textColor = .label
+        return house
+    }()
+    
+    private lazy var specieLabel: UILabel = {
+        let specie = UILabel()
+        specie.font = UIFont(name: "HelveticaNeue-CondensedBlack", size: 20)
+        specie.textColor = .label
+        return specie
+    }()
+    
+    private lazy var dateOfBirthLabel: UILabel = {
+        let date = UILabel()
+        date.font = UIFont(name: "HelveticaNeue-CondensedBlack", size: 20)
+        date.textColor = .label
+        return date
+    }()
+    
+    private lazy var patronusLabel: UILabel = {
+        let patronus = UILabel()
+        patronus.font = UIFont(name: "HelveticaNeue-CondensedBlack", size: 20)
+        patronus.textColor = .label
+        return patronus
+    }()
+    
+    private lazy var actorLabel: UILabel = {
+        let actor = UILabel()
+        actor.font = UIFont(name: "HelveticaNeue-CondensedBlack", size: 20)
+        actor.textColor = .label
+        actor.numberOfLines = 0
+        return actor
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         setupLayoutDetail()
 
-    }
-    
-    private func configLabel() -> UILabel {
-        let label = UILabel()
-        label.font = UIFont(name: "HelveticaNeue-CondensedBlack", size: 20)
-        return label
     }
     
     func setupLayoutDetail() {
@@ -61,16 +90,17 @@ class DetailViewController: UIViewController {
             profile.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
             stackView.topAnchor.constraint(equalTo: profile.bottomAnchor, constant: 15),
-            stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+            stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10)
         ])
     }
     
     func configure(with character: ListCharacters) {
         nameLabel.text = "Nome: \(character.name)"
-        houseLabel.text = "Casa: \(character.house ?? "Não sabo")"
+        houseLabel.text = "Casa: \(character.house ?? "Desconhecida")"
         specieLabel.text = "Espécie: \(character.species ?? "Desconhecida")"
         dateOfBirthLabel.text = "Nascimento: \(character.dateOfBirth ?? "Não informado")"
-        patronusLabel.text = "Patrono: \(character.patronus ?? "Não sabo")"
+        patronusLabel.text = "Patrono: \(character.patronus ?? "Nenhum")"
         actorLabel.text = "Ator: \(character.actor ?? "Desconhecido")"
         
         let placeholderImage = UIImage(named: "placeholder")
@@ -79,44 +109,6 @@ class DetailViewController: UIViewController {
             profile.download(from: imageUrl, placeholder: placeholderImage)
         } else {
             profile.image = placeholderImage
-        }
-        
-        switch character.house {
-            case "Gryffindor":
-                view.backgroundColor = UIColor(named: "GryffindorColor")
-                nameLabel.textColor = .white
-                houseLabel.textColor = .white
-                specieLabel.textColor = .white
-                dateOfBirthLabel.textColor = .white
-                patronusLabel.textColor = .white
-                actorLabel.textColor = .white
-            case "Slytherin":
-                view.backgroundColor = UIColor(named: "SlytherinColor")
-                nameLabel.textColor = .white
-                houseLabel.textColor = .white
-                specieLabel.textColor = .white
-                dateOfBirthLabel.textColor = .white
-                patronusLabel.textColor = .white
-                actorLabel.textColor = .white
-            case "Ravenclaw":
-                view.backgroundColor = UIColor(named: "RavenclawColor")
-                nameLabel.textColor = .white
-                houseLabel.textColor = .white
-                specieLabel.textColor = .white
-                dateOfBirthLabel.textColor = .white
-                patronusLabel.textColor = .white
-                actorLabel.textColor = .white
-            case "Hufflepuff":
-                view.backgroundColor = UIColor(named: "HufflepuffColor")
-                nameLabel.textColor = .black
-                houseLabel.textColor = .black
-                specieLabel.textColor = .black
-                dateOfBirthLabel.textColor = .black
-                patronusLabel.textColor = .black
-                actorLabel.textColor = .black
-            default:
-                view.backgroundColor = .systemBackground
-                nameLabel.textColor = .label
         }
     }
 }
